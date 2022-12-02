@@ -1,6 +1,4 @@
 const Book = require('./Book');
-
-let bookReadTitle,bookReadAuthor,bookReadLength,bookReadYear,dateRead,rating;
 class ReadBook{
     constructor(title,author,length,year,dateRead,rating){
         this.bookReadTitle = title;
@@ -15,8 +13,7 @@ class ReadBook{
 let readingList = [];
 class ReadingList{
     constructor(){
-        this.readingList = [];
-        this.readingBook = {};
+        readingList = [];
     }
     addBook(Book,dateRead,rating){
         try{

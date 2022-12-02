@@ -1,5 +1,3 @@
-let title , author, length, year;
-
 class Book{
     constructor(title,author,length,year){
         this.title = title;

@@ -16,7 +16,6 @@ describe('All Acceptance Criterias',()=>{
     });
     // Given that I have an empty list, when I add the first book to my list then I expect numberRead to return 1.
     test('AC:02',()=> {
-
         //Arrange
         let book1 = new Book('The John',"John Patric",1345,2022);
         // Act
@@ -24,6 +23,22 @@ describe('All Acceptance Criterias',()=>{
         let ReadBooks = myReadingList.numberReads();
         // Assert
         expect(ReadBooks).toBe(1);
-    })
+    });
+
+    //Given that I have an empty list, when I add additional books to the list I expect the numberRead to return the total number of books in my list.
+    test('AC:03',()=> {
+        //Arrange
+        let book1 = new Book("The Snow Crash","Neal Strephson",200,1992);
+        let book2 = new Book("The Earth","Unknown1",300,2000);
+        let book3 = new Book("The Sun","Unknown2",500,1999);
+
+        // Act
+        myReadingList.addBook(book1,'Dec 02,2022',4);
+        myReadingList.addBook(book2,'Dec 05,2022',3);
+        myReadingList.addBook(book3,'Dec 07,2022',2);
+        let ReadBooks = myReadingList.numberReads();
+        // Assert
+        expect(ReadBooks).toBe(3);
+    });
 });
 
