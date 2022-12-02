@@ -5,8 +5,10 @@ const ReadingList = require('./ReadingList');
 describe('GetEmptyListOnFirstCall',()=>{
     test('AC:01',()=>{
         //Arrange
+        let myReadingList = new ReadingList();
         //Act
-        let ReadBooks = ReadingList.numberReads();
+        let ReadBooks = myReadingList.numberReads();
+        console.log(ReadBooks);
         //Assert
         expect(ReadBooks).toBe(0);
     });

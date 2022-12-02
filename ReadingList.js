@@ -1,12 +1,27 @@
 const Book = require('./Book');
-function ReadingList(Book,dateRead,rating){
-    const readingList = {};
+// function ReadingList(){
+//     const readingList = {};
 
-    function getBook(){
+//     function getBook(){
+//         return ReadingList;
+//     }
+
+//     function numberReads(){
+//         const numberReads = Object.keys(readingList).length;
+//         return numberReads;
+//     } 
+// }
+
+let readingList = new Object();
+
+class ReadingList{
+    constructor(){
+        this.readingList = new Object();
+    }
+    getBook(){
         return ReadingList;
     }
-
-    function numberReads(){
+    numberReads(){
         const numberReads = Object.keys(readingList).length;
         return numberReads;
     } 
