@@ -39,6 +39,23 @@ class ReadingList{
         }
         return BookString;
     }
+    getBooksByRating(rating){
+        let BookString = "";
+        for(let i=0;i<readingList.length;i++){
+            if(readingList[i].rating == rating){
+                if(i!==0){
+                    BookString+=", ";
+                }
+                let star = "";
+                for(let j=0;j<readingList[i].rating;j++){
+                    star+="*";
+                }
+                BookString+= readingList[i].bookReadTitle+" by "+readingList[i].bookReadAuthor+", "+readingList[i].bookReadLength+" pages, "+readingList[i].bookReadYear+" read on "+readingList[i].dateRead+", "+star;
+            }
+        }
+        return BookString;
+    }
+    
     removeBook(title){
         let index =0;
         for (let i=0; i<readingList.length; i++){
