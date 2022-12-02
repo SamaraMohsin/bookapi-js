@@ -58,5 +58,21 @@ describe('All Acceptance Criterias',()=>{
         expect(ReadBooks).toBe('The Snow Crash by Neal Strephson, 200 pages, 1992 read on Dec 02,2022, ****, The Sun by Unknown2, 500 pages, 1999 read on Dec 07,2022, **');
     
     });
+
+    //Given that I have an empty list, when I add a new book I expect getBooks() to return a list of books that includes the book I added.
+    test('AC:05',()=> {
+        //Arrange
+        let book1 = new Book("The Snow Crash","Neal Strephson",200,1992);
+        let book2 = new Book("The Earth","Unknown1",300,2000);
+        let book3 = new Book("The Sun","Unknown2",500,1999);
+        // Act
+        myReadingList.addBook(book1,'Dec 02,2022',4);
+        myReadingList.addBook(book2,'Dec 05,2022',3);
+        myReadingList.addBook(book3,'Dec 07,2022',2);
+        let ReadBooks = myReadingList.getBooks();
+        // Assert
+        expect(ReadBooks).toBe('The Snow Crash by Neal Strephson, 200 pages, 1992 read on Dec 02,2022, ****, The Earth by Unknown1, 300 pages, 2000 read on Dec 05,2022, ***, The Sun by Unknown2, 500 pages, 1999 read on Dec 07,2022, **');
+    
+    });
 });
 
