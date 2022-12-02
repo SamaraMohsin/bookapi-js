@@ -1,17 +1,4 @@
 const Book = require('./Book');
-// function ReadingList(){
-//     const readingList = {};
-
-//     function getBook(){
-//         return ReadingList;
-//     }
-
-//     function numberReads(){
-//         const numberReads = Object.keys(readingList).length;
-//         return numberReads;
-//     } 
-// }
-
 let readingList = new Object();
 
 class ReadingList{
@@ -19,7 +6,7 @@ class ReadingList{
         this.readingList = new Object();
     }
     getBook(){
-        return ReadingList;
+        return this.readingList;
     }
     numberReads(){
         const numberReads = Object.keys(readingList).length;
